@@ -1,0 +1,29 @@
+<!-- CyberLab 003: Simulated firewall traffic -->
+<group name="cyberlab_firewall,network,">
+  <rule id="100100" level="3">
+    <decoded_as>cyberlab-firewall</decoded_as>
+    <description>CyberLab: Simulated firewall $(action) traffic from $(srcip) to $(dstip), destination port $(dstport).</description>
+    <group>network_traffic,</group>
+  </rule>
+</group>
+
+<!-- CyberLab 003: Repeated authentication failures -->
+<group name="cyberlab_authentication,authentication_failed,">
+  <rule id="100101" level="10" frequency="5" timeframe="300">
+    <if_matched_sid>5503</if_matched_sid>
+    <same_user />
+    <description>CyberLab: Five failed authentication attempts against the same account within five minutes.</description>
+    <group>authentication_failures,brute_force,</group>
+  </rule>
+</group>
+
+<!-- CyberLab 003: Suspicious Windows process execution -->
+<group name="cyberlab_process_detection,windows,">
+  <rule id="100102" level="8">
+    <if_group>sysmon_eid1_detections</if_group>
+    <field name="win.eventdata.image" type="pcre2">(?i)\\cmd\.exe$</field>
+    <field name="win.eventdata.parentImage" type="pcre2">(?i)\\powershell\.exe$</field>
+    <description>CyberLab: PowerShell launched cmd.exe on a Windows endpoint.</description>
+    <group>process_creation,suspicious_process_execution,</group>
+  </rule>
+</group>
