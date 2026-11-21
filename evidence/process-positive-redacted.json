@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-20T21:21:55.855+0000",
+  "rule": {
+    "id": "100102",
+    "level": 8,
+    "description": "CyberLab: PowerShell launched cmd.exe on a Windows endpoint."
+  },
+  "agent": {
+    "id": "002",
+    "name": "REDACTED_LAB_HOST_OR_ACCOUNT"
+  },
+  "decoder": {
+    "name": "windows_eventchannel"
+  },
+  "location": "EventChannel",
+  "event": {
+    "eventID": "1",
+    "image": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+    "parentImage": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+    "eventRecordID": "4432"
+  }
+}
