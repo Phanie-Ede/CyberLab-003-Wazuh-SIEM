@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-21T16:32:22.876+0000",
+  "rule": {
+    "id": "100101",
+    "level": 10,
+    "description": "CyberLab: Five failed authentication attempts against the same account within five minutes.",
+    "frequency": 5
+  },
+  "agent": {
+    "id": "001",
+    "name": "REDACTED_LAB_HOST_OR_ACCOUNT"
+  },
+  "decoder": {
+    "name": "pam"
+  },
+  "location": "journald",
+  "event": {
+    "account": "test-account",
+    "previous_failure_count": 4,
+    "final_event": "PAM sudo authentication failure"
+  }
+}
