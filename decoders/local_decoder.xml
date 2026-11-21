@@ -1,0 +1,9 @@
+<!-- CyberLab 003: Simulated firewall log decoder -->
+<decoder name="cyberlab-firewall">
+  <program_name>^CyberLab-Firewall$</program_name>
+</decoder>
+<decoder name="cyberlab-firewall-fields">
+  <parent>cyberlab-firewall</parent>
+  <regex type="pcre2">FIREWALL action=(\w+) src=(\S+) dst=(\S+) proto=(\w+) dpt=(\d+)</regex>
+  <order>action,srcip,dstip,protocol,dstport</order>
+</decoder>
