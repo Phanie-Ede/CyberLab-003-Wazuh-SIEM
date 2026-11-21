@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-11-20T17:15:18.468+0000",
+  "rule": {
+    "id": "100100",
+    "level": 3,
+    "description": "CyberLab: Simulated firewall ALLOW traffic from REDACTED_LAB_IP to REDACTED_LAB_IP, destination port 3306."
+  },
+  "agent": {
+    "id": "000",
+    "name": "REDACTED_LAB_HOST_OR_ACCOUNT"
+  },
+  "decoder": {
+    "name": "cyberlab-firewall"
+  },
+  "location": "REDACTED_LAB_IP",
+  "event": {
+    "action": "ALLOW",
+    "srcip": "REDACTED_LAB_IP",
+    "dstip": "REDACTED_LAB_IP",
+    "dstport": "3306",
+    "protocol": "TCP",
+    "simulated": true
+  }
+}
